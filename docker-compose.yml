@@ -1,5 +1,5 @@
 services:
-  chat-server:
+  system:
     container_name: chat-nestjs
     build:
       context: ./

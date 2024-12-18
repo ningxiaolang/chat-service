@@ -3,8 +3,10 @@ import { AuthService } from './auth.service';
 import { LoginDto, RegisterDto } from './dto/auth.dto';
 import { UserService } from '@/modules/user/user.service';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { Public } from '@/common/decorators/public.decorator';
 
 @ApiTags('Auth - 认证模块')
+@Public()
 @Controller('auth')
 export class AuthController {
   constructor(

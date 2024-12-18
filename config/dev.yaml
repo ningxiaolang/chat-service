@@ -1,7 +1,7 @@
 # 项目配置
 APP:
   prefix: '/'
-  port: 3005
+  port: 3000
   tokenTime: 3600 # token有效时间(单位秒)
 
 # Swagger 配置
@@ -40,8 +40,13 @@ REDIS:
 
 # JWT
 JWT:
-  secret: 'Unusual-Admin'
+  secret: 'Chat-Admin'
   expiresIn: '7d'
+
+# Throttler
+THROTTLE:
+  ttl: 10
+  limit: 7
 
 # GITHUB
 GITHUB:

@@ -1,10 +1,21 @@
-import { Controller, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UseGuards,
+} from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { AuthStrategy } from '@/constants/auth.constant';
+import { AuthGuard } from '@nestjs/passport';
 
 @ApiTags('User - 用户模块')
+@UseGuards(AuthGuard(AuthStrategy.JWT))
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}

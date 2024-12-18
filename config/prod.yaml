@@ -40,7 +40,7 @@ REDIS:
 
 # JWT
 JWT:
-  secret: 'Unusual-Admin'
+  secret: 'Chat-Admin'
   expiresIn: '7d'
 
 # GITHUB

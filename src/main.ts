@@ -14,6 +14,8 @@ async function bootstrap() {
   const appConfig = configService.get('APP');
   const swaggerConfig = configService.get('SWAGGER');
 
+  // 设置跨域
+  app.enableCors();
   // 设置全局前缀
   app.setGlobalPrefix(appConfig.prefix);
   // 全局内置管道
